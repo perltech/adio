@@ -1,5 +1,11 @@
 $( document ).ready(function() {
 
+/*Initialize LastFM Authorization*/
+
+/*End LastFM Authorization*/
+
+
+/*Initialize TourSchedule via Bands in Town*/
 $(".searchBar").on("submit", function(event) {
 $("#artist-table tbody").empty();
 var artist = $(".searchBar > input").val().trim();
@@ -7,6 +13,8 @@ var artist = $(".searchBar > input").val().trim();
 var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
 
         event.preventDefault();
+
+
 
 
         $.get(queryURL)
@@ -27,7 +35,7 @@ var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_i
           //$("#tour").text(artistData);
         });
     });
+/*End TourSchedule via Bands in Town*/
 
-
-});
+}); // onReady end
 
