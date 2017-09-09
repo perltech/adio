@@ -1,4 +1,4 @@
-
+$( document ).ready(function() {
 
 $(".searchBar").on("submit", function(event) {
 $("#artist-table tbody").empty();
@@ -26,4 +26,8 @@ var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_i
 
           //$("#tour").text(artistData);
         });
-    })
+    });
+
+
+});
+
