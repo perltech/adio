@@ -1,6 +1,14 @@
 $( document ).ready(function() {
 
 /*Initialize LastFM Authorization*/
+var getToken = "ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=f142d81024deed3190bfbcfede982008&format=json"; // goes to token JSON object
+
+.load("index.html", function function_name(argument) {
+  // body...
+})
+
+// get token from JSON object (using stringify?) and save that off into memory and use that to check against the onload function
+
 
 /*End LastFM Authorization*/
 
@@ -38,4 +46,5 @@ var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_i
 /*End TourSchedule via Bands in Town*/
 
 }); // onReady end
+
 
