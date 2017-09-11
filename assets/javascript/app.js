@@ -2,12 +2,10 @@ $(document).ready(function() {
 /*Initialize LastFM Authorization*/
 var getToken = "ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=f142d81024deed3190bfbcfede982008&format=json"; // goes to token JSON object
 
-.load("https://perltech.github.io/adio/", function checkForTokenExists(token) {
+.load("https://perltech.github.io/adio/index.html", function checkForTokenExists(token) {
   // body...
   if("token" = true) {
-    window.location.href("index.html");
-  } else {
-    window.location.href("login.html");
+    window.location.href("search-page.html");
   }
 });
 
