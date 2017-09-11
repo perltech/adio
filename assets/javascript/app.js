@@ -1,6 +1,6 @@
 $(document).ready(function() {
 /*Initialize LastFM Authorization*/
-var getToken = "ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=f142d81024deed3190bfbcfede982008&format=json"; // goes to token JSON object
+var getToken = "ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=cbbacd0695a375ee5ba47d5457bb8cf8&format=json"; // goes to token JSON object
 
 .load("https://perltech.github.io/adio/index.html", function checkForTokenExists(token) {
   // body...
