@@ -9,6 +9,28 @@ body {
 
 }
 
+/*Login Button*/
+#login-button {
+    border: 10px solid #fcfcfc;
+    border-radius: 30px;
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4a148c;
+    box-shadow: 0 9px #3b1070;
+}
+
+/*.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}*/
+
+
+/*Login Button*/
 
 #search input[type="text"] {
     background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
