@@ -28,7 +28,7 @@ var artist = $(".searchBar > input").val().trim();
 
 var bandsInTownURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
 
-var lastFMURL = "/2.0/?method=artist.search&artist=" + artist + "&api_key=cbbacd0695a375ee5ba47d5457bb8cf8&format=json"
+var lastFMURL = ""
 
         event.preventDefault();
 
