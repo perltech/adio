@@ -1,11 +1,11 @@
 $(document).ready(function() {
 /*Initialize LastFM Authorization*/
-var getToken = "ws.audioscrobbler.com/2.0/?method=auth.gettoken&api_key=cbbacd0695a375ee5ba47d5457bb8cf8&format=json"; // goes to token JSON object
+ // goes to token JSON object
+  var token = window.location.search.split('?token=')[1];
 
-.load("https://perltech.github.io/adio/index.html", function checkForTokenExists(token) {
   // body...
-  if("token" = true) {
-    window.location.href("search-page.html");
+  if(token) {
+   //display 
   }
 });
 
@@ -17,12 +17,12 @@ $(".searchBar").on("submit", function(event) {
 $("#artist-table tbody").empty();
 var artist = $(".searchBar > input").val().trim();
 
-var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
+var bandsInTownURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
 
         event.preventDefault();
 
 
-        $.get(queryURL)
+        $.get(bandsInTownURL)
         .done(function(response){
           for (var i = 0; i < response.length; i++) { //On the API, grab the first content of the array to the length of the array
            var row = $('<tr>');// On the html table go to the row
