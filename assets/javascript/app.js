@@ -1,6 +1,7 @@
 $(document).ready(function() {
 /*Initialize LastFM Authorization*/
  // goes to token JSON object
+
   var token = window.location.search.split('?token=')[1];
 
   // LastFM API Key: 7ec54293b71ff780b78575e0bda44e26
@@ -8,8 +9,11 @@ $(document).ready(function() {
   // body...
   if(token) {
    //display search
+   document.getElementById('initsearch').style.visibility = "visible";
+   document.getElementById('login').style.visibility = "hidden";
   } else {
     // display login
+    document.getElementById('login').style.visibility = "visible";
   }
 
 // get token from JSON object (using stringify?) and save that off into memory and use that to check against the onload function
@@ -18,11 +22,15 @@ $(document).ready(function() {
 /*Initialize TourSchedule for Bands in Town*/
 $(".searchBar").on("submit", function(event) {
 $("#artist-table tbody").empty();
+document.getElementById('header').style.visibility = "visible";
+document.getElementById('results').style.visibility = "visible";
 var artist = $(".searchBar > input").val().trim();
 
 var bandsInTownURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
 
+
 var lastFMURL = "/2.0/?method=artist.search&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json"
+
 
         event.preventDefault();
 

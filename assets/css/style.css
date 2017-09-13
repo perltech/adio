@@ -3,6 +3,13 @@ body {
 }
 #header{
 	background-color: rgb(69, 48, 96);
+    visibility: hidden;
+}
+#initsearch{
+    visibility: hidden;
+}
+#results{
+    visibility: hidden;
 }
 
 #search {
