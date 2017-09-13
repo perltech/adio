@@ -3,7 +3,7 @@ $(document).ready(function() {
  // goes to token JSON object
   var token = window.location.search.split('?token=')[1];
 
-  // LastFM API Key: cbbacd0695a375ee5ba47d5457bb8cf8
+  // LastFM API Key: 7ec54293b71ff780b78575e0bda44e26
 
   // body...
   if(token) {
@@ -22,7 +22,7 @@ var artist = $(".searchBar > input").val().trim();
 
 var bandsInTownURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
 
-var lastFMURL = "/2.0/?method=artist.search&artist=" + artist + "&api_key=cbbacd0695a375ee5ba47d5457bb8cf8&format=json"
+var lastFMURL = "/2.0/?method=artist.search&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json"
 
         event.preventDefault();
 
