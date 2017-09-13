@@ -3,11 +3,14 @@ $(document).ready(function() {
  // goes to token JSON object
   var token = window.location.search.split('?token=')[1];
 
+  // LastFM API Key: cbbacd0695a375ee5ba47d5457bb8cf8
+
   // body...
   if(token) {
-   //display 
+   //display search
+  } else {
+    // display login
   }
-});
 
 // get token from JSON object (using stringify?) and save that off into memory and use that to check against the onload function
 /*End LastFM Authorization*/
@@ -18,6 +21,8 @@ $("#artist-table tbody").empty();
 var artist = $(".searchBar > input").val().trim();
 
 var bandsInTownURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
+
+var lastFMURL = ""
 
         event.preventDefault();
 
