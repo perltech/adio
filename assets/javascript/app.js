@@ -81,7 +81,8 @@ function lastFMGetSimilarArtists(artist) {
           p.slideToggle();
         });
         div.append(img);
-      }      
+      }
+      $("#suggest").html(div);
     });
 }
 
