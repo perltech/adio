@@ -39,21 +39,51 @@ function getTourSchedule(artist) {
 
 /* Initialize Artist Search through LastFM*/
 function lastFMSearch(artist) {
-  var lastFMSearch = "http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json"
+  var lastFMSearchURL = "https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json";
   // Can be used to strip for artist picture
-  $.get(lastFMSearch)
+  $.get(lastFMSearchURL)
     .done(function(response){
+      var img = $('img');
       var bandName = results.artistmatches.artist[0].name;
       var bandPic = results.artistmatches.artist[0].image[2]['#text'];
-      var img = $('img');
+      
       img.append(bandPic);
       img.attr("alt", bandName);
       $('#audiowidg').html(bandPic);
 
     });
-
 }
 /* End Artist Search through LastFM */
+
+function lastFMGetSimilarArtists(artist) {
+  var lastFMGetSimilarArtistsURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json";
+
+  $.get(lastFMGetSimilarArtistsURL)
+    .done(function(response){
+      var img = $('img');
+      var p = $('p');
+      var div = $('div');
+      var bandName = similarartists.artist[i].name;
+      var bandPic = similarartists.artist[i].image[2]['#text'];
+      
+
+      for(i = 0; i < 3; i++) {
+        img.append(bandPic);
+        img.attr("alt", bandName);
+        p.append(bandName);
+        p.attr("display", "none");
+        img.append(p);
+        $(this).on('mouseenter', 'img', function(){
+          p.slideToggle();
+        });
+
+        $(this).on('mouseleave', 'img', function() {
+          p.slideToggle();
+        });
+        div.append(img);
+      }      
+    });
+}
 
 
 $(".searchBar").on("submit", function(event) {
