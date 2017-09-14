@@ -1,12 +1,9 @@
 $(document).ready(function() {
-/*Initialize LastFM Authorization*/
- // goes to token JSON object
-
+  /*Initialize LastFM Authorization*/
   var token = window.location.search.split('?token=')[1];
 
   // LastFM API Key: 7ec54293b71ff780b78575e0bda44e26
 
-  // body...
   if(token) {
    //display search
    document.getElementById('initsearch').style.display = "block";
@@ -15,28 +12,12 @@ $(document).ready(function() {
     // display login
     document.getElementById('login').style.display = "block";
   }
+  /*End LastFM Authorization*/
 
-// get token from JSON object (using stringify?) and save that off into memory and use that to check against the onload function
-/*End LastFM Authorization*/
+  function getTourSchedule(artist) {
+    var bandsInTownURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
 
-/*Initialize TourSchedule for Bands in Town*/
-$(".searchBar").on("submit", function(event) {
-$("#artist-table tbody").empty();
-document.getElementById('header').style.display = "block";
-document.getElementById('results').style.display = "block";
-document.getElementById('initsearch').style.display = "none";
-var artist = $(".searchBar > input").val().trim();
-
-var bandsInTownURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=adio";
-
-
-var lastFMURL = "/2.0/?method=artist.search&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json"
-
-
-        event.preventDefault();
-
-
-        $.get(bandsInTownURL)
+    $.get(bandsInTownURL)
         .done(function(response){
           for (var i = 0; i < response.length; i++) { //On the API, grab the first content of the array to the length of the array
            var row = $('<tr>');// On the html table go to the row
@@ -53,6 +34,29 @@ var lastFMURL = "/2.0/?method=artist.search&artist=" + artist + "&api_key=7ec542
 
           //$("#tour").text(artistData);
         });
+  }
+
+/*Initialize TourSchedule for Bands in Town*/
+$(".searchBar").on("submit", function(event) {
+  var artist = $(".searchBar > input").val().trim();
+
+  event.preventDefault();
+
+  $("#artist-table tbody").empty();
+
+  document.getElementById('header').style.display = "block";
+  document.getElementById('results').style.display = "block";
+  document.getElementById('initsearch').style.display = "none";
+
+  getTourSchedule(artist);  
+
+var lastFMSearch = "http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json"
+// Can be used to strip for artist picture
+
+  
+
+
+        
 });
 /*End TourSchedule via Bands in Town*/
 
