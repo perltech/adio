@@ -70,11 +70,14 @@ function lastFMGetSimilarArtists(artist) {
       var bandPic = response.similarartists.artist[i].image[2]['#text'];
         var img = $('<img>');
         var li = $('<li>');
+        var h1 = $('<h1>');
+        h1.append(bandName);
         
         img.attr('src', bandPic);
         img.attr("alt", bandName);
-        li.append(bandName);
+        // li.append(bandName);
         // p.attr("display", "none");
+        li.append(h1);
         li.append(img);
         li.addClass('slides');
         // img.on('mouseenter', function(){
