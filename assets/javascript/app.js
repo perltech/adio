@@ -63,7 +63,7 @@ function lastFMGetSimilarArtists(artist) {
       var div = $('<div>');
       div.addClass('slider');
       var ul = $('<ul>');
-      
+      ul.addClass('slides');
       
 
       for(i = 0; i < 3; i++) {
@@ -81,7 +81,7 @@ function lastFMGetSimilarArtists(artist) {
         // p.attr("display", "none");
         li.append(h1);
         li.append(img);
-        li.addClass('slides');
+        
         // img.on('mouseenter', function(){
         //   p.slideToggle();
         // });
