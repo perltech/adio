@@ -59,15 +59,16 @@ function lastFMGetSimilarArtists(artist) {
 
   $.get(lastFMGetSimilarArtistsURL)
     .done(function(response){
-      var img = $('<img>');
-      var p = $('<p>');
-      var div = $('<div>');
+      
       
       
 
       for(i = 0; i < 3; i++) {
       var bandName = response.similarartists.artist[i].name;
       var bandPic = response.similarartists.artist[i].image[2]['#text'];
+        var img = $('<img>');
+        var p = $('<p>');
+        var div = $('<div>');
         img.attr('src', bandPic);
         img.attr("alt", bandName);
         p.append(bandName);
