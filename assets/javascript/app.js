@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.slider').slider();
 
 /*Initialize LastFM Authorization*/
 var token = window.location.search.split('?token=')[1];
