@@ -43,13 +43,13 @@ function lastFMSearch(artist) {
   // Can be used to strip for artist picture
   $.get(lastFMSearchURL)
     .done(function(response){
-      var img = $('img');
-      var bandName = results.artistmatches.artist[0].name;
-      var bandPic = results.artistmatches.artist[0].image[2]['#text'];
+      var img = $('<img>');
+      var bandName = response.results.artistmatches.artist[0].name;
+      var bandPic = response.results.artistmatches.artist[0].image[2]['#text'];
       
       img.append(bandPic);
       img.attr("alt", bandName);
-      $('#audiowidg').html(bandPic);
+      $('#audiowidg').html(img);
 
     });
 }
@@ -60,9 +60,9 @@ function lastFMGetSimilarArtists(artist) {
 
   $.get(lastFMGetSimilarArtistsURL)
     .done(function(response){
-      var img = $('img');
-      var p = $('p');
-      var div = $('div');
+      var img = $('<img>');
+      var p = $('<p>');
+      var div = $('<div');
       var bandName = similarartists.artist[i].name;
       var bandPic = similarartists.artist[i].image[2]['#text'];
       
@@ -73,11 +73,11 @@ function lastFMGetSimilarArtists(artist) {
         p.append(bandName);
         p.attr("display", "none");
         img.append(p);
-        $(this).on('mouseenter', 'img', function(){
+        $(this).on('mouseenter', '<img>', function(){
           p.slideToggle();
         });
 
-        $(this).on('mouseleave', 'img', function() {
+        $(this).on('mouseleave', '<img>', function() {
           p.slideToggle();
         });
         div.append(img);
@@ -88,7 +88,7 @@ function lastFMGetSimilarArtists(artist) {
 
 
 $(".searchBar").on("submit", function(event) {
-  var artist = $(".searchBar > input").val().trim();
+  var artist = $(this).find('input').val().trim();
 
   event.preventDefault();
 
@@ -99,7 +99,8 @@ $(".searchBar").on("submit", function(event) {
   document.getElementById('initsearch').style.display = "none";
 
   getTourSchedule(artist);
-  lastFMSearch(artist);  
+  lastFMSearch(artist);
+  lastFMGetSimilarArtists(artist);  
 
 });
 
