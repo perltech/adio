@@ -1,3 +1,12 @@
+// The program starts with a page where you can login, this redirects you to last FM
+// If you have an account you allow access or you create an account on last.fm
+// After the access have been allowed or an account have been created, you are redirected back to the search page
+// On the search page, you enter the name of the artist
+// Th result page is displayed with a Artist Piucture, their Biography, their tour schedule 
+// and othger suggested artist similar to them
+// Users have access to buying tickets and they can enter a new artist in the search bar.
+
+
 $(document).ready(function() {
 /*Initialize LastFM Authorization*/
  // goes to token JSON object

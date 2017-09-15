@@ -19,7 +19,7 @@ body {
 
 }
 
-/*Login Button*/
+/*Login Button */
 #login-button {
     border: 10px solid #fcfcfc;
     border-radius: 30px;
@@ -32,13 +32,6 @@ body {
     background-color: #4a148c;
     box-shadow: 0 9px #3b1070;
 }
-
-/*.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-}*/
-
 
 /*Login Button*/
 
