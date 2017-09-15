@@ -74,13 +74,13 @@ function lastFMGetSimilarArtists(artist) {
         p.append(bandName);
         // p.attr("display", "none");
         img.append(p);
-        $(this).on('mouseenter', 'img', function(){
+       /* $(this).on('mouseenter', 'img', function(){
           p.slideToggle();
         });
 
         $(this).on('mouseleave', 'img', function() {
           p.slideToggle();
-        });
+        });*/
         div.append(img);
       }
       $("#suggest").html(div);
