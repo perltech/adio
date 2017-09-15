@@ -97,6 +97,18 @@ function lastFMGetSimilarArtists(artist) {
 }
 
 
+function lastFMGetArtistInfo(artist) {
+	var lastFMGetArtistInfoURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json";
+
+	$.get(lastFMGetArtistInfoURL)
+		.done(function(response){
+			var bandInfo = response.artist.bio.summary;
+			var blockquote = $('<blockquote>');
+			blockquote.append(bandInfo);
+			$('#bio').html(blockquote);
+		})
+}
+
 $(".searchBar").on("submit", function(event) {
   var artist = $(this).find('input').val().trim();
 
@@ -111,6 +123,7 @@ $(".searchBar").on("submit", function(event) {
   getTourSchedule(artist);
   lastFMSearch(artist);
   lastFMGetSimilarArtists(artist);  
+  lastFMGetArtistInfo(artist);
 
 });
 
