@@ -68,7 +68,7 @@ function lastFMGetSimilarArtists(artist) {
       for(i = 0; i < 3; i++) {
       var bandName = response.similarartists.artist[i].name;
       var bandPic = response.similarartists.artist[i].image[2]['#text'];
-        img.append(bandPic);
+        img.attr('src', bandPic);
         img.attr("alt", bandName);
         p.append(bandName);
         p.attr("display", "none");
