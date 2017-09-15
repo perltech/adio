@@ -33,6 +33,15 @@ body {
     box-shadow: 0 9px #3b1070;
 }
 
+#login-button:hover {
+    background-color: #441281;
+}
+
+#login-button:active {
+  background-color: #441281;
+  box-shadow: 0 5px #340e62;
+  transform: translateY(4px);
+}
 /*.button {
     -webkit-appearance: button;
     -moz-appearance: button;
