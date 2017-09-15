@@ -46,8 +46,7 @@ function lastFMSearch(artist) {
       var img = $('<img>');
       var bandName = response.results.artistmatches.artist[0].name;
       var bandPic = response.results.artistmatches.artist[0].image[2]['#text'];
-      
-      img.append(bandPic);
+      img.attr('src', bandPic);
       img.attr("alt", bandName);
       $('#audiowidg').html(img);
 
@@ -56,7 +55,7 @@ function lastFMSearch(artist) {
 /* End Artist Search through LastFM */
 
 function lastFMGetSimilarArtists(artist) {
-  var lastFMGetSimilarArtistsURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json";
+  var lastFMGetSimilarArtistsURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" + artist + "&api_key=7ec54293b71ff780b78575e0bda44e26&format=json";
 
   $.get(lastFMGetSimilarArtistsURL)
     .done(function(response){
