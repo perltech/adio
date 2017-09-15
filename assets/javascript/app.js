@@ -44,10 +44,14 @@ function lastFMSearch(artist) {
   $.get(lastFMSearchURL)
     .done(function(response){
       var img = $('<img>');
+      var h1 = $('<h1>');
       var bandName = response.results.artistmatches.artist[0].name;
       var bandPic = response.results.artistmatches.artist[0].image[2]['#text'];
+
+      h1.append(bandName);
       img.attr('src', bandPic);
       img.attr("alt", bandName);
+      $('#band-name').html(h1);
       $('#audiowidg').html(img);
 
     });
