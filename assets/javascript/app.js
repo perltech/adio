@@ -72,7 +72,7 @@ function lastFMGetSimilarArtists(artist) {
         img.attr('src', bandPic);
         img.attr("alt", bandName);
         p.append(bandName);
-        p.attr("display", "none");
+        // p.attr("display", "none");
         img.append(p);
         $(this).on('mouseenter', 'img', function(){
           p.slideToggle();
