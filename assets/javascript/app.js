@@ -75,6 +75,7 @@ function lastFMGetSimilarArtists(artist) {
         
         img.attr('src', bandPic);
         img.attr("alt", bandName);
+        h1.addClass('caption center-align');
         // li.append(bandName);
         // p.attr("display", "none");
         li.append(h1);
