@@ -89,6 +89,7 @@ function lastFMGetSimilarArtists(artist) {
         // });
         ul.append(li);
       }
+      div.append(ul);
       $("#suggest").html(div);
     });
 }
