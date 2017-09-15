@@ -61,7 +61,7 @@ function lastFMGetSimilarArtists(artist) {
     .done(function(response){
       var img = $('<img>');
       var p = $('<p>');
-      var div = $('<div');
+      var div = $('<div>');
       var bandName = similarartists.artist[i].name;
       var bandPic = similarartists.artist[i].image[2]['#text'];
       
