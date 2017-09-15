@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $('.slider').slider();
 
 /*Initialize LastFM Authorization*/
 var token = window.location.search.split('?token=')[1];
@@ -93,6 +92,7 @@ function lastFMGetSimilarArtists(artist) {
       }
       div.append(ul);
       $("#suggest").html(div);
+      $('.slider').slider();
     });
 }
 
