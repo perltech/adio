@@ -60,6 +60,8 @@ function lastFMGetSimilarArtists(artist) {
   $.get(lastFMGetSimilarArtistsURL)
     .done(function(response){
       var div = $('<div>');
+      div.addClass('slider');
+      var ul = $('<ul>');
       
       
 
@@ -67,21 +69,22 @@ function lastFMGetSimilarArtists(artist) {
       var bandName = response.similarartists.artist[i].name;
       var bandPic = response.similarartists.artist[i].image[2]['#text'];
         var img = $('<img>');
-        var p = $('<p>');
+        var li = $('<li>');
         
         img.attr('src', bandPic);
         img.attr("alt", bandName);
-        p.append(bandName);
+        li.append(bandName);
         // p.attr("display", "none");
-        img.append(p);
-        img.on('mouseenter', function(){
-          p.slideToggle();
-        });
+        li.append(img);
+        li.addClass('slides');
+        // img.on('mouseenter', function(){
+        //   p.slideToggle();
+        // });
 
-        img.on('mouseleave', function() {
-          p.slideToggle();
-        });
-        div.append(img);
+        // img.on('mouseleave', function() {
+        //   p.slideToggle();
+        // });
+        ul.append(li);
       }
       $("#suggest").html(div);
     });
