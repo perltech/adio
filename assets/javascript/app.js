@@ -28,12 +28,12 @@ function getTourSchedule(artist) {
              // row.append('<td>' + response[i].datetime);//the second item is the date the gig will play
              row.append('<td>'+ response[i].venue.city);//the city in which the venue is. Eg pepsi center is in Denver
             var eventLink =  response[i].offers[0].url;
-            var a = $('<a>');
-            a.attr("href", eventLink);
-            a.attr("target", "_blank");
-            a.append("Buy Tickets");
-            row.append('<td>' + a);
-            //row.append('<td> <a href="'+ eventLink + '"> Buy Tickets');// Make the content here clickable
+            // var a = $('<a>');
+            // a.attr("href", eventLink);
+            // a.attr("target", "_blank");
+            // a.append("Buy Tickets");
+            // row.append('<td>' + a);
+            row.append('<td> <a href="'+ eventLink + '"> Buy Tickets');// Make the content here clickable
 
          $("#artist-table tbody").append(row);//On the html display all the information
      } 
