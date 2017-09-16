@@ -1,6 +1,10 @@
 body {
 	 background-color: #4a148c ;
 }
+.caption{
+     -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
 #header{
 	background-color: rgb(69, 48, 96);
     display: none;
