@@ -102,6 +102,10 @@ h5{
 #search {
 
 }
+#name{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #4a148c;
+}
 
 /*Login Button*/
 #login-button {
