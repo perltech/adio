@@ -68,6 +68,8 @@ a {
 h4{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #4a148c;
+    font-family: 'Monoton', cursive;
+
 }
 .brand-logo:hover{
     color: #8c9eff;
@@ -81,6 +83,8 @@ h4{
 .caption{
      -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    font-family: 'Monoton', cursive;
+
 }
 .caption:hover{
     color: yellow;
