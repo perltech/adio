@@ -11,7 +11,7 @@ if(token) {
 } else {
   // display login
   document.getElementById('login').style.display = "block";
-  $('#bgvid').remove();
+  
 }
 /*End LastFM Authorization*/
 
