@@ -7,9 +7,11 @@ if(token) {
  //display search
  document.getElementById('initsearch').style.display = "block";
  document.getElementById('login').style.display = "none";
+ $('#bgvid').empty();
 } else {
   // display login
   document.getElementById('login').style.display = "block";
+  $('#bgvid').empty();
 }
 /*End LastFM Authorization*/
 
