@@ -30,14 +30,14 @@ table {
 }
 thead {
     border-bottom: 1px solid black;
+    font-weight: bold;
 }
 h1{
     color: white;
     font-family: 'Monoton', cursive;
 }
 h1:hover{
-   -webkit-text-stroke-width: 2px;
-   -webkit-text-stroke-color: #8c9eff;
+   color: yellow;
 }
 table:hover{
     border: 2px solid yellow;
