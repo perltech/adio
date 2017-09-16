@@ -27,7 +27,9 @@ function getTourSchedule(artist) {
              row.append('<td>'+convDate);
              // row.append('<td>' + response[i].datetime);//the second item is the date the gig will play
              row.append('<td>'+ response[i].venue.city);//the city in which the venue is. Eg pepsi center is in Denver
-             row.append('<td> <a href="'+ response[i].offers[0].url + '"> Buy Tickets');// Make the content here clickable
+            var eventLink = row.append('<td> <a href="'+ response[i].offers[0].url + '"> Buy Tickets');// Make the content here clickable
+            eventLink.replace(/^\/t\/$/, "/e/")
+            
 
          $("#artist-table tbody").append(row);//On the html display all the information
      } 
