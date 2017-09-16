@@ -1,6 +1,12 @@
 body {
 	 background-color: #4a148c ;
 }
+img{
+    border-radius: 25px;
+}
+img:hover{
+    border-color: yellow;
+}
 .caption{
      -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
