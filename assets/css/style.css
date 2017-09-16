@@ -34,8 +34,8 @@ h1{
     
 }
 h1:hover{
-   -webkit-text-stroke-width: 3px;
-   -webkit-text-stroke-color: yellow;
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: #8c9eff;
 }
 table:hover{
     border: 2px solid yellow;
@@ -43,6 +43,9 @@ table:hover{
 blockquote:hover{
     border: 2px solid yellow;
 
+}
+a {
+    color: blue;
 }
 .slider .slides {
     background-color: transparent;
@@ -122,7 +125,7 @@ blockquote:hover{
     }
 
 #search input[type="text"]:focus {
-    /*background: url(search-dark.png) no-repeat 10px 6px #fcfcfc;*/
+    background: url(search-dark.png) no-repeat 10px 6px #8c9eff;
     color: #6a6f75;
     width: 40%;
     -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
@@ -153,7 +156,7 @@ blockquote:hover{
     }
 
 #search2 input[type="text"]:focus {
-    /*background: url(search-dark.png) no-repeat 10px 6px #fcfcfc;*/
+    background: url(search-dark.png) no-repeat 10px 6px #8c9eff;
     color: #6a6f75;
     width: 40%;
     -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(0, 0, 0, 0.9) inset;
