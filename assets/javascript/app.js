@@ -20,7 +20,7 @@ function getTourSchedule(artist) {
   $.get(bandsInTownURL)
       .done(function(response){
         for (var i = 0; i < response.length; i++) { //On the API, grab the first content of the array to the length of the array
-         var row = $('<tr>');// On the html table go to the row
+            var row = $('<tr>');// On the html table go to the row
              row.append('<td>'+ response[i].venue.name);// On the row, the first item is the venue name eg Pepsi Center is a venue
              var d = response[i].datetime.slice(0,10).split('-');
              var convDate = d[1]+'/'+d[2]+'/'+d[0];
@@ -28,12 +28,12 @@ function getTourSchedule(artist) {
              // row.append('<td>' + response[i].datetime);//the second item is the date the gig will play
              row.append('<td>'+ response[i].venue.city);//the city in which the venue is. Eg pepsi center is in Denver
             var eventLink =  response[i].offers[0].url;
-            
-            row.append('<td> <a href="'+ eventLink + '"> Buy Tickets');// Make the content here clickable
-            
-            $(this).on("click", "a", function(){
-            eventLink.replace(/^\/t\/$/, "/e/");
-            });
+            var a = $('<a>');
+            a.attr("href", eventLink);
+            a.attr("target", "_blank");
+            a.append("Buy Tickets");
+            row.append('<td>' + a);
+            //row.append('<td> <a href="'+ eventLink + '"> Buy Tickets');// Make the content here clickable
 
          $("#artist-table tbody").append(row);//On the html display all the information
      } 
