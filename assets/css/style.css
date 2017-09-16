@@ -31,14 +31,18 @@ thead {
 }
 h1{
     color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: yellow;
+    
 }
 h1:hover{
-   border: 2px solid yellow; 
+   -webkit-text-stroke-width: 3px;
+   -webkit-text-stroke-color: yellow;
 }
-table{
+table:hover{
     border: 2px solid yellow;
+}
+blockquote:hover{
+    border: 2px solid yellow;
+
 }
 .slider .slides {
     background-color: transparent;
